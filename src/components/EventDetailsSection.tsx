@@ -31,7 +31,7 @@ const EventDetailsSection = () => {
     {
       icon: <TempleIcon className="w-8 h-8" />,
       title: "Phera and Reception",
-      time: "10:00 AM",
+      time: "12:00 PM",
       date: "20th April 2026",
       location: "S N Palace",
       address: "Serikhedi, Raipur",

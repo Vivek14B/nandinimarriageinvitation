@@ -21,8 +21,10 @@ const FooterSection = ({ names }: FooterSectionProps) => {
             <span className="w-12 h-px bg-dusty-rose/30" />
           </div>
 
-          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-            {names.person1} & {names.person2}
+          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4 tracking-wider">
+            <span className="text-primary">N</span>
+            <span className="mx-3 text-dusty-rose/60">&</span>
+            <span className="text-primary">K</span>
           </h2>
 
           <p className="font-elegant text-lg text-muted-foreground italic mb-8">

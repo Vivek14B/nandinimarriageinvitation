@@ -15,9 +15,8 @@ const WEDDING_CONFIG = {
     person2: "Kunal"
   },
   initials: "N&K",
-  date: "20th, April, 2026",
-  weddingDate: new Date("2026-04-20T10:00:00"),
-  venue: "S N Palace, Serikhedi, Raipur"
+  date: "20th April, 2026",
+  weddingDate: new Date("2026-04-20T10:00:00")
 };
 
 const Index = () => {
@@ -88,7 +87,6 @@ const Index = () => {
           <HeroSection
             names={WEDDING_CONFIG.names}
             date={WEDDING_CONFIG.date}
-            venue={WEDDING_CONFIG.venue}
           />
           <PhotoGallerySection />
           <CountdownSection weddingDate={WEDDING_CONFIG.weddingDate} />
