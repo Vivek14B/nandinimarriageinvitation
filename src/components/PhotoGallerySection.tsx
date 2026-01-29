@@ -7,22 +7,17 @@ import WeddingIllustration from "./WeddingIllustration";
 const engagementPhotos = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=800&fit=crop",
-    alt: "Engagement photo 1",
-    caption: "The day we said yes"
+    src: "/profile1.jpg",
+    alt: "photo_1",
+    caption: "Two hearts, one journey"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop",
-    alt: "Engagement photo 2",
-    caption: "Our favorite spot"
+    src: "/profile2.jpg",
+    alt: "photo_2",
+    caption: "Together as one"
   },
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?w=600&h=800&fit=crop",
-    alt: "Engagement photo 3",
-    caption: "Adventures together"
-  }
+
 ];
 
 const PhotoGallerySection = () => {
