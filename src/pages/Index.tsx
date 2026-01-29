@@ -64,18 +64,9 @@ const Index = () => {
         ref={audioRef}
         loop
         preload="auto"
-        onError={(e) => {
-          console.error("Audio failed to load. Please add a music file to /public/wedding-music.mp3");
-          setIsMusicPlaying(false);
-        }}
-        onLoadedData={() => {
-          console.log("Audio loaded successfully!");
-        }}
       >
         {/* Add your wedding music file to the public folder as wedding-music.mp3 */}
         <source src="/wedding-music.mp3" type="audio/mpeg" />
-        {/* Fallback to online source if local file not found */}
-        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_c8c6e26d7b.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Music control button - shows when envelope is open */}
