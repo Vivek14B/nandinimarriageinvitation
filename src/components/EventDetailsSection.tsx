@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Church, UtensilsCrossed, Music, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Music, MapPin, Clock, ExternalLink } from "lucide-react";
+import TempleIcon from "./icons/TempleIcon";
 
 interface Event {
   icon: React.ReactNode;
   title: string;
   time: string;
+  date?: string;
   location: string;
   address: string;
   mapUrl?: string;
@@ -18,25 +20,19 @@ const EventDetailsSection = () => {
 
   const events: Event[] = [
     {
-      icon: <Church className="w-8 h-8" />,
-      title: "Ceremony",
-      time: "3:00 PM",
-      location: "St. Mary's Chapel",
-      address: "123 Garden Lane, Beautiful City",
-      mapUrl: "https://maps.app.goo.gl/voj4ECiiKf3s9hY1A"
-    },
-    {
-      icon: <UtensilsCrossed className="w-8 h-8" />,
-      title: "Reception",
-      time: "5:30 PM",
+      icon: <Music className="w-8 h-8" />,
+      title: "Sangeet",
+      time: "7:00 PM",
+      date: "19th April 2026",
       location: "S N Palace",
       address: "Serikhedi, Raipur",
       mapUrl: "https://maps.app.goo.gl/voj4ECiiKf3s9hY1A"
     },
     {
-      icon: <Music className="w-8 h-8" />,
-      title: "Celebration",
-      time: "8:00 PM",
+      icon: <TempleIcon className="w-8 h-8" />,
+      title: "Marriage",
+      time: "10:00 AM",
+      date: "20th April 2026",
       location: "S N Palace",
       address: "Serikhedi, Raipur",
       mapUrl: "https://maps.app.goo.gl/voj4ECiiKf3s9hY1A"
@@ -65,7 +61,7 @@ const EventDetailsSection = () => {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {events.map((event, index) => (
             <motion.div
               key={event.title}
@@ -86,10 +82,17 @@ const EventDetailsSection = () => {
                 </h3>
 
                 {/* Time */}
-                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-4">
+                <div className="flex items-center justify-center gap-2 text-muted-foreground mb-2">
                   <Clock className="w-4 h-4" />
                   <span className="font-elegant text-lg">{event.time}</span>
                 </div>
+
+                {/* Date */}
+                {event.date && (
+                  <p className="font-body text-sm text-primary font-medium mb-4">
+                    {event.date}
+                  </p>
+                )}
 
                 {/* Location */}
                 <div className="space-y-1">
