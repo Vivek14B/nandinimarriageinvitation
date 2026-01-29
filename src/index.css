@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Elegant Wedding Palette */
+    --background: 35 30% 96%;
+    --foreground: 25 20% 20%;
+
+    --card: 35 25% 98%;
+    --card-foreground: 25 20% 20%;
+
+    --popover: 35 25% 98%;
+    --popover-foreground: 25 20% 20%;
+
+    /* Rose Gold Primary */
+    --primary: 15 45% 55%;
+    --primary-foreground: 35 30% 98%;
+
+    /* Warm Cream Secondary */
+    --secondary: 38 35% 92%;
+    --secondary-foreground: 25 20% 25%;
+
+    /* Soft Cream Accent */
+    --accent: 38 30% 85%;
+    --accent-foreground: 25 20% 20%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Burgundy/Wine for emphasis */
+    --destructive: 350 60% 35%;
+    --destructive-foreground: 35 30% 98%;
+
+    --border: 35 25% 85%;
+    --input: 35 25% 88%;
+    --ring: 15 45% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom Wedding Colors */
+    --ivory: 40 30% 96%;
+    --cream: 38 35% 92%;
+    --champagne: 42 40% 88%;
+    --rose-gold: 15 45% 55%;
+    --dusty-rose: 350 25% 70%;
+    --burgundy: 350 60% 30%;
+    --sage: 38 25% 80%;
+    --gold: 42 75% 50%;
+    
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(35 30% 96%), hsl(38 35% 92%), hsl(35 25% 94%));
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 50%), hsl(35 55% 60%), hsl(42 75% 50%));
+    --gradient-rose: linear-gradient(180deg, hsl(350 25% 75% / 0.3), transparent);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(25 20% 20% / 0.08);
+    --shadow-elegant: 0 10px 40px hsl(25 20% 20% / 0.12);
+    --shadow-card: 0 2px 12px hsl(25 20% 20% / 0.06);
+    
+    /* Typography */
+    --font-display: 'Playfair Display', serif;
+    --font-elegant: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 20% 10%;
+    --foreground: 35 30% 95%;
+    --card: 25 20% 12%;
+    --card-foreground: 35 30% 95%;
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 30% 95%;
+    --primary: 15 45% 60%;
+    --primary-foreground: 25 20% 10%;
+    --secondary: 25 15% 20%;
+    --secondary-foreground: 35 30% 95%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 20% 65%;
+    --accent: 140 15% 35%;
+    --accent-foreground: 35 30% 95%;
+    --destructive: 350 50% 45%;
+    --destructive-foreground: 35 30% 95%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 15 45% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-display {
+    font-family: var(--font-display);
+  }
+  
+  .text-elegant {
+    font-family: var(--font-elegant);
+  }
+  
+  .text-body {
+    font-family: var(--font-body);
+  }
+  
+  .bg-paper {
+    background: var(--gradient-romantic);
+    background-size: 100% 100%;
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  .animate-envelope-open {
+    animation: envelopeOpen 1.2s ease-out forwards;
+  }
+  
+  .animate-seal-break {
+    animation: sealBreak 0.8s ease-out forwards;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes envelopeOpen {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes sealBreak {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--cream));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--rose-gold));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--burgundy));
+}
