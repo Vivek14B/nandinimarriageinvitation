@@ -30,7 +30,7 @@ const EventDetailsSection = () => {
     },
     {
       icon: <TempleIcon className="w-8 h-8" />,
-      title: "Marriage",
+      title: "Phera and Reception",
       time: "10:00 AM",
       date: "20th April 2026",
       location: "S N Palace",

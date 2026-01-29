@@ -26,19 +26,19 @@ const Index = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleOpenEnvelope = () => {
+    // Attempt to play immediately within the user interaction
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+      audioRef.current.play()
+        .then(() => setIsMusicPlaying(true))
+        .catch(error => {
+          console.log("Audio playback failed:", error);
+          setIsMusicPlaying(false);
+        });
+    }
+
+    // Open envelope (animations can run after play attempt)
     setIsEnvelopeOpen(true);
-    // Try to play music immediately when envelope opens (user interaction)
-    setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.volume = 0.5;
-        audioRef.current.play()
-          .then(() => setIsMusicPlaying(true))
-          .catch(error => {
-            console.log("Audio playback failed:", error);
-            setIsMusicPlaying(false);
-          });
-      }
-    }, 500);
   };
 
   const toggleMusic = () => {
