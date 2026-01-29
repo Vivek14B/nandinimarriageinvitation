@@ -15,7 +15,7 @@ const WEDDING_CONFIG = {
     person2: "Kunal"
   },
   initials: "N&K",
-  date: "April 20th, 2026",
+  date: "20th, April, 2026",
   weddingDate: new Date("2026-04-20T10:00:00"),
   venue: "S N Palace, Serikhedi, Raipur"
 };

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePaperSound } from "@/hooks/usePaperSound";
 
 interface EnvelopeLandingProps {
@@ -83,7 +83,18 @@ const FloralPattern = () => (
 const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
   const [isOpening, setIsOpening] = useState(false);
   const [flapOpened, setFlapOpened] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { playPaperRustle } = usePaperSound();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleClick = () => {
     if (isOpening) return;
@@ -410,7 +421,10 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
               <motion.button
                 onClick={handleClick}
                 className="absolute z-20 cursor-pointer focus:outline-none"
-                style={{ top: "38%", transform: "translateY(-50%)" }}
+                style={{
+                  top: isMobile ? "40%" : "38%",
+                  transform: "translateY(-50%)"
+                }}
                 initial={{ scale: 0, rotate: -30 }}
                 animate={{ scale: 1, rotate: 0 }}
                 exit={{ scale: 0.3, rotate: 45, y: -80, opacity: 0 }}
@@ -485,7 +499,10 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
                 {/* Tap hint */}
                 <motion.div
                   className="absolute -bottom-10 flex flex-col items-center gap-1"
-                  style={{ left: "10%", transform: "translateX(-50%)" }}
+                  style={{
+                    left: isMobile ? "15%" : "10%",
+                    transform: "translateX(-50%)"
+                  }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5, duration: 0.6 }}
