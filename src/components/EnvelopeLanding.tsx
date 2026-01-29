@@ -410,7 +410,7 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
               <motion.button
                 onClick={handleClick}
                 className="absolute z-20 cursor-pointer focus:outline-none"
-                style={{ top: "50%", transform: "translateY(-50%)" }}
+                style={{ top: "38%", transform: "translateY(-50%)" }}
                 initial={{ scale: 0, rotate: -30 }}
                 animate={{ scale: 1, rotate: 0 }}
                 exit={{ scale: 0.3, rotate: 45, y: -80, opacity: 0 }}
@@ -484,7 +484,8 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
 
                 {/* Tap hint */}
                 <motion.div
-                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+                  className="absolute -bottom-10 flex flex-col items-center gap-1"
+                  style={{ left: "10%", transform: "translateX(-50%)" }}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5, duration: 0.6 }}
@@ -560,18 +561,7 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
         </div>
       </div>
 
-      {/* Skip button */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        whileHover={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        onClick={onOpen}
-        className="absolute bottom-4 right-4 md:bottom-6 md:right-6 font-body text-[10px] md:text-xs text-white/70 hover:text-white transition-colors tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
-        style={{ background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.15)" }}
-      >
-        Skip
-      </motion.button>
+
 
       {/* Decorative text - desktop only */}
       <motion.p
