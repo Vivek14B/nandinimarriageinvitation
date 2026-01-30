@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 
-import SignatureMonogram from "./SignatureMonogram";
+import SignatureMonogram from "@/components/SignatureMonogram";
 
 interface FooterSectionProps {
   names: { person1: string; person2: string };

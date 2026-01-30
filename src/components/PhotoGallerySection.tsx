@@ -15,8 +15,9 @@ const engagementPhotos = [
     id: 2,
     src: "/profile2.jpg",
     alt: "photo_2",
-    caption: "Together as one"
+    caption: "Engagement shoot"
   },
+
 
 ];
 
