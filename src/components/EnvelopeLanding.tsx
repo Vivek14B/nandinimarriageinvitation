@@ -500,7 +500,7 @@ const EnvelopeLanding = ({ coupleInitials, onOpen }: EnvelopeLandingProps) => {
                 <motion.div
                   className="absolute -bottom-10 flex flex-col items-center gap-1"
                   style={{
-                    left: isMobile ? "15%" : "10%",
+                    left: isMobile ? "5%" : "10%",
                     transform: "translateX(-50%)"
                   }}
                   initial={{ opacity: 0, y: -10 }}
