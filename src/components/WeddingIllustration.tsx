@@ -52,17 +52,20 @@ const WeddingIllustration = () => {
     <div className="relative w-full max-w-md mx-auto">
       <div className="relative overflow-hidden rounded-lg shadow-elegant group">
         {/* Cinematic Zoom Effect */}
-        <motion.img
-          src="/jaimala-ceremony.png"
-          alt="Jaimala Ceremony - Bride and Groom exchanging garlands"
-          className="w-full h-auto"
+        <motion.video
+          src="/Animated_Wedding_Photo_Video_Generation.mp4"
+          className="w-full h-auto mix-blend-multiply"
           initial={{ opacity: 0, scale: 1.0 }}
-          whileInView={{ opacity: 1, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1.05 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{
-            opacity: { duration: 1, ease: easeInOut },
+            opacity: { duration: 1, ease: [0.42, 0, 0.58, 1] },
             scale: { duration: 10, ease: "linear", repeat: Infinity, repeatType: "reverse" }
           }}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
 
         {/* Soft Shimmer Overlay */}
